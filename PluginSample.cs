@@ -190,7 +190,7 @@ namespace TBscan
 			ActGlobals.oFormActMain.AfterCombatAction += new CombatActionDelegate(oFormActMain_AfterCombatAction);
             ActGlobals.oFormActMain.OnLogLineRead +=new LogLineEventDelegate(OFormActMain_OnLogLineRead);
 
-            lblStatus.Text = "Plugin Started.\nNot scanning.";
+            lblStatus.Text = "Plugin Enabled\nNot scanning.";
 		}
 
         private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
@@ -324,7 +324,7 @@ namespace TBscan
             ActGlobals.oFormActMain.OnLogLineRead -= OFormActMain_OnLogLineRead;
             scanning = false;
             button1.Text = "Scan";
-            lblStatus.Text = "Plugin Started.\nNot scanning.";
+            lblStatus.Text = "Plugin Enabled\nNot scanning.";
         }
 
         private void startScanning()
@@ -341,7 +341,7 @@ namespace TBscan
 
             button1.Text = "Scannig...";
             ActGlobals.oFormActMain.OnLogLineRead += new LogLineEventDelegate(OFormActMain_OnLogLineRead);
-            lblStatus.Text = "Plugin Started.\nScanning for: " + textBox1.Text.Clone();
+            lblStatus.Text = "Plugin Enabled\nScanning for: " + textBox1.Text.Clone();
         }
     }
 }
