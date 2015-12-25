@@ -106,4 +106,31 @@
   <ItemGroup>
     <None Include="Resources\scanning.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brank.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\srank.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arank.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scanCancelled.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\syntaxError.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\targetchanged.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errorInvalidTarget.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\errorPleaseEnterTheNameOfAMob.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\targetUpdated.wav" />
+  </ItemGroup>
 </Project>
