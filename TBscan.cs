@@ -41,9 +41,6 @@ namespace TBscan
         private Match match;
 
         private GroupBox groupBox1;
-        private StatusStrip statusStrip1;
-        private ToolStripProgressBar toolStripProgressBar1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
         private CheckBox checkBox_HW_audio_Arank;
@@ -54,6 +51,8 @@ namespace TBscan
         private CheckBox checkBox_ARR_audio_Brank;
         private CheckBox checkBox_ARR_audio_Arank;
         private CheckBox checkBox_ARR_audio_Srank;
+        private ToolStripStatusLabel toolStripStatusLabel1;
+        private StatusStrip statusStrip1;
 
         #region Designer Created Code (Avoid editing)
         /// <summary> 
@@ -90,9 +89,6 @@ namespace TBscan
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox_ARR_audio_Brank = new System.Windows.Forms.CheckBox();
@@ -103,11 +99,13 @@ namespace TBscan
             this.checkBox_HW_audio_Srank = new System.Windows.Forms.CheckBox();
             this.checkBox_HW_audio_Brank = new System.Windows.Forms.CheckBox();
             this.checkBox_audio_cancelled = new System.Windows.Forms.CheckBox();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_targetName
@@ -178,30 +176,6 @@ namespace TBscan
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "TBscan";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 365);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(631, 22);
-            this.statusStrip1.TabIndex = 6;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            this.toolStripProgressBar1.Step = 1;
-            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(78, 17);
-            this.toolStripStatusLabel1.Text = "Not scanning";
             // 
             // groupBox2
             // 
@@ -321,26 +295,42 @@ namespace TBscan
             this.checkBox_audio_cancelled.Text = "Play audio notification when scan is cancelled.";
             this.checkBox_audio_cancelled.UseVisualStyleBackColor = true;
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(78, 17);
+            this.toolStripStatusLabel1.Text = "Not scanning";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 365);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(631, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
             // TBscanner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "TBscanner";
             this.Size = new System.Drawing.Size(631, 387);
             this.Load += new System.EventHandler(this.TBscanner_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,6 +617,7 @@ namespace TBscan
             textBox_targetName.ReadOnly = false;
 
             button1.Text = "Scan";
+            toolStripStatusLabel1.Text = "Not scanning";
             lblStatus.Text = "Plugin Enabled\nNot scanning.";
         }
 
@@ -652,6 +643,7 @@ namespace TBscan
 
             scanning = true;
             button1.Text = "Scannig...";
+            toolStripStatusLabel1.Text = "Scanning...";
             lblStatus.Text = "Plugin Enabled\nScanning for: " + textBox_targetName.Text.Clone();
         }
     }
