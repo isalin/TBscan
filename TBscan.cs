@@ -404,7 +404,7 @@ namespace TBscan
 
         private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
-            //Scan target 
+            //Scan target
             if (scanning)
             {
                 match = scanner_regex.Match(logInfo.logLine);
@@ -426,6 +426,7 @@ namespace TBscan
 #endif
                         }
                     }
+                    return;
                 }
             }
 
@@ -439,6 +440,7 @@ namespace TBscan
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.srank);
                         snd.Play();
+                        return;
                     }
                 }
             }
@@ -452,6 +454,7 @@ namespace TBscan
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.arank);
                         snd.Play();
+                        return;
                     }
                 }
             }
@@ -465,6 +468,7 @@ namespace TBscan
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.brank);
                         snd.Play();
+                        return;
                     }
                 }
             }
@@ -480,6 +484,7 @@ namespace TBscan
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.srank);
                         snd.Play();
+                        return;
                     }
                 }
             }
@@ -493,6 +498,7 @@ namespace TBscan
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.arank);
                         snd.Play();
+                        return;
                     }
                 }
             }
@@ -506,6 +512,7 @@ namespace TBscan
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.brank);
                         snd.Play();
+                        return;
                     }
                 }
             }
