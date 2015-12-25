@@ -75,7 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PluginSample.cs">
+    <Compile Include="TBscan.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -85,8 +85,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="PluginSample.resx">
-      <DependentUpon>PluginSample.cs</DependentUpon>
+    <EmbeddedResource Include="TBscan.resx">
+      <DependentUpon>TBscan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
