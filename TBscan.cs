@@ -383,7 +383,6 @@ namespace TBscan
             LoadSettings();
 
             // Create some sort of parsing event handler.  After the "+=" hit TAB twice and the code will be generated for you.
-            ActGlobals.oFormActMain.AfterCombatAction += new CombatActionDelegate(oFormActMain_AfterCombatAction);
             ActGlobals.oFormActMain.OnLogLineRead += new LogLineEventDelegate(OFormActMain_OnLogLineRead);
 
             lblStatus.Text = "Plugin Enabled\nNot scanning.";
@@ -512,21 +511,14 @@ namespace TBscan
         public void DeInitPlugin()
         {
             // Unsubscribe from any events you listen to when exiting!
-            ActGlobals.oFormActMain.AfterCombatAction -= oFormActMain_AfterCombatAction;
+            ActGlobals.oFormActMain.OnLogLineRead += OFormActMain_OnLogLineRead;
+
             SaveSettings();
             lblStatus.Text = "Plugin Disabled";
         }
         #endregion
 
-        void oFormActMain_AfterCombatAction(bool isImport, CombatActionEventArgs actionInfo)
-        {
-            if (actionInfo.ToString().Contains("test"))
-            {
-                MessageBox.Show("AfterCombat");
-
-            }
-            throw new NotImplementedException();
-        }
+        
 
         void LoadSettings()
         {
