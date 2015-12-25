@@ -50,7 +50,6 @@ namespace TBscan
         private CheckBox checkBox_HW_audio_Srank;
         private CheckBox checkBox_HW_audio_Brank;
         private CheckBox checkBox_audio_cancelled;
-        private CheckBox checkBox_ingameScanCommand;
         private GroupBox groupBox4;
         private CheckBox checkBox_ARR_audio_Brank;
         private CheckBox checkBox_ARR_audio_Arank;
@@ -103,7 +102,6 @@ namespace TBscan
             this.checkBox_HW_audio_Arank = new System.Windows.Forms.CheckBox();
             this.checkBox_HW_audio_Srank = new System.Windows.Forms.CheckBox();
             this.checkBox_HW_audio_Brank = new System.Windows.Forms.CheckBox();
-            this.checkBox_ingameScanCommand = new System.Windows.Forms.CheckBox();
             this.checkBox_audio_cancelled = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -209,7 +207,6 @@ namespace TBscan
             // 
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.checkBox_ingameScanCommand);
             this.groupBox2.Controls.Add(this.checkBox_audio_cancelled);
             this.groupBox2.Controls.Add(this.checkBox_audio_located);
             this.groupBox2.Controls.Add(this.checkBox_audio_start);
@@ -312,16 +309,6 @@ namespace TBscan
             this.checkBox_HW_audio_Brank.Text = "Notify when B-rank is nearby";
             this.checkBox_HW_audio_Brank.UseVisualStyleBackColor = true;
             // 
-            // checkBox_ingameScanCommand
-            // 
-            this.checkBox_ingameScanCommand.AutoSize = true;
-            this.checkBox_ingameScanCommand.Location = new System.Drawing.Point(6, 186);
-            this.checkBox_ingameScanCommand.Name = "checkBox_ingameScanCommand";
-            this.checkBox_ingameScanCommand.Size = new System.Drawing.Size(276, 17);
-            this.checkBox_ingameScanCommand.TabIndex = 9;
-            this.checkBox_ingameScanCommand.Text = "Enable in-game scan command (\"TBscan: [NAME]\").";
-            this.checkBox_ingameScanCommand.UseVisualStyleBackColor = true;
-            // 
             // checkBox_audio_cancelled
             // 
             this.checkBox_audio_cancelled.AutoSize = true;
@@ -402,8 +389,12 @@ namespace TBscan
             lblStatus.Text = "Plugin Enabled\nNot scanning.";
         }
 
+        
+
         private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
+            
+
             //Scan target
             if (scanning)
             {
@@ -553,7 +544,6 @@ namespace TBscan
             xmlSettings.AddControlSetting(checkBox_HW_audio_Arank.Name, checkBox_HW_audio_Arank);
             xmlSettings.AddControlSetting(checkBox_HW_audio_Srank.Name, checkBox_HW_audio_Srank);
 
-            xmlSettings.AddControlSetting(checkBox_ingameScanCommand.Name, checkBox_ingameScanCommand);
 
             if (File.Exists(settingsFile))
             {
@@ -622,6 +612,12 @@ namespace TBscan
         {
             if (scanning == false)
             {
+                if (textBox_targetName.Text.ToString().Equals(""))
+                {
+                    SoundPlayer snd = new SoundPlayer(Properties.Resources.errorPleaseEnterTheNameOfAMob);
+                    snd.Play();
+                    return;
+                }
                 startScanning(textBox_targetName.Text.ToString());
             }
             else
