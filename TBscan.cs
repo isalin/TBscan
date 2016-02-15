@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 using System.Media;
 
 [assembly: AssemblyTitle("TBscanner")]
-[assembly: AssemblyVersion("1.0.0.1")]
+[assembly: AssemblyVersion("1.0.0.2")]
 [assembly: AssemblyCompany("TiaBot")]
 [assembly: AssemblyCopyright("Copyright (c) 2015, Tialyth")]
 [assembly: AssemblyDescription("A plugin that lets you scan for nearby NPC.")]
@@ -53,6 +53,7 @@ namespace TBscan
         private CheckBox checkBox_ARR_audio_Srank;
         private ToolStripStatusLabel toolStripStatusLabel1;
         private StatusStrip statusStrip1;
+        private CheckBox checkBox_case_sensitive_search;
 
         #region Designer Created Code (Avoid editing)
         /// <summary> 
@@ -101,6 +102,7 @@ namespace TBscan
             this.checkBox_audio_cancelled = new System.Windows.Forms.CheckBox();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.checkBox_case_sensitive_search = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -123,7 +125,7 @@ namespace TBscan
             this.checkBox_audio_start.AutoSize = true;
             this.checkBox_audio_start.Checked = true;
             this.checkBox_audio_start.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_audio_start.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_audio_start.Location = new System.Drawing.Point(6, 42);
             this.checkBox_audio_start.Name = "checkBox_audio_start";
             this.checkBox_audio_start.Size = new System.Drawing.Size(224, 17);
             this.checkBox_audio_start.TabIndex = 2;
@@ -136,7 +138,7 @@ namespace TBscan
             this.checkBox_audio_located.AutoSize = true;
             this.checkBox_audio_located.Checked = true;
             this.checkBox_audio_located.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_audio_located.Location = new System.Drawing.Point(6, 43);
+            this.checkBox_audio_located.Location = new System.Drawing.Point(6, 65);
             this.checkBox_audio_located.Name = "checkBox_audio_located";
             this.checkBox_audio_located.Size = new System.Drawing.Size(234, 17);
             this.checkBox_audio_located.TabIndex = 3;
@@ -179,6 +181,7 @@ namespace TBscan
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox_case_sensitive_search);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.checkBox_audio_cancelled);
@@ -288,7 +291,7 @@ namespace TBscan
             this.checkBox_audio_cancelled.AutoSize = true;
             this.checkBox_audio_cancelled.Checked = true;
             this.checkBox_audio_cancelled.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_audio_cancelled.Location = new System.Drawing.Point(6, 67);
+            this.checkBox_audio_cancelled.Location = new System.Drawing.Point(6, 88);
             this.checkBox_audio_cancelled.Name = "checkBox_audio_cancelled";
             this.checkBox_audio_cancelled.Size = new System.Drawing.Size(246, 17);
             this.checkBox_audio_cancelled.TabIndex = 4;
@@ -310,6 +313,16 @@ namespace TBscan
             this.statusStrip1.Size = new System.Drawing.Size(631, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // checkBox_case_sensitive_search
+            // 
+            this.checkBox_case_sensitive_search.AutoSize = true;
+            this.checkBox_case_sensitive_search.Location = new System.Drawing.Point(6, 19);
+            this.checkBox_case_sensitive_search.Name = "checkBox_case_sensitive_search";
+            this.checkBox_case_sensitive_search.Size = new System.Drawing.Size(143, 17);
+            this.checkBox_case_sensitive_search.TabIndex = 11;
+            this.checkBox_case_sensitive_search.Text = "Case sensitive searching";
+            this.checkBox_case_sensitive_search.UseVisualStyleBackColor = true;
             // 
             // TBscanner
             // 
@@ -390,7 +403,13 @@ namespace TBscan
             //Scan target
             if (scanning)
             {
-                match = scanner_regex.Match(logInfo.logLine);
+                if(checkBox_case_sensitive_search.Checked)
+                {
+                    match = scanner_regex.Match(logInfo.logLine);
+                } else
+                {
+                    match = scanner_regex.Match(logInfo.logLine.ToString().ToLower());
+                }
                 if (match.Success)
                 {
                     lock (scannerLock)
@@ -517,6 +536,7 @@ namespace TBscan
         {
             xmlSettings.AddControlSetting(textBox_targetName.Name, textBox_targetName);
 
+            xmlSettings.AddControlSetting(checkBox_case_sensitive_search.Name, checkBox_case_sensitive_search);
             xmlSettings.AddControlSetting(checkBox_audio_start.Name, checkBox_audio_start);
             xmlSettings.AddControlSetting(checkBox_audio_located.Name, checkBox_audio_located);
             xmlSettings.AddControlSetting(checkBox_audio_cancelled.Name, checkBox_audio_cancelled);
@@ -626,7 +646,16 @@ namespace TBscan
 
         private void startScanning(string target)
         {
-            scanner_regex = new Regex("^.+03:Added new combatant " + target + ".+");
+            String regexString;
+            if (checkBox_case_sensitive_search.Checked)
+            {
+                regexString = "^.+03:Added new combatant " + target + ".+";
+            }
+            else
+            {
+                regexString = ("^.+03:Added new combatant " + target + ".+").ToLower();
+            }
+            scanner_regex = new Regex(regexString);
             textBox_targetName.ReadOnly = true;
 
             if (checkBox_audio_start.Checked)
