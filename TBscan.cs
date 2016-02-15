@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 using System.Media;
 
 [assembly: AssemblyTitle("TBscanner")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.1")]
 [assembly: AssemblyCompany("TiaBot")]
 [assembly: AssemblyCopyright("Copyright (c) 2015, Tialyth")]
 [assembly: AssemblyDescription("A plugin that lets you scan for nearby NPC.")]
@@ -31,7 +31,7 @@ namespace TBscan
         string[] hunts_arr_brank = { "Albin the Ashen", "Barbastelle", "Bloody Mary", "Dark Helmet", "Flame Sergeant Dalvag", "Gatling", "Leech King", "Monarch Ogrefly", "Myradrosh", "Naul", "Ovjang", "Phecda", "Sewer Syrup", "Skogs Fru", "Stinging Sophie", "Vuokho", "White Joker" };
 
         //HW hunt marks
-        string[] hunts_hw_brank = { "Alteci", "Kreutzet", "Gnath Cometdrone", "Thextera", "Pterygotus", "Gigantopithecus", "Scitalis", "The Scarecrow", "Squonk", "Sanu Vali of Dancing Wings", "Lycidas", "Omni" };
+        string[] hunts_hw_brank = { "Alteci", "Kreutzet", "Gnath Cometdrone", "Thextera", "Pterygotus", "Gigantopithecus", "Scitalis", "The Scarecrow", "Squonk", "Sanu Vali Of Dancing Wings", "Lycidas", "Omni" };
         string[] hunts_hw_arank = { "Mirka", "Lyuba", "Pylraster", "Lord of the Wyverns", "Slipkinx Steeljoints", "Stolas", "Bune", "Agathos", "Enkelados", "Sisiutl", "Campacti", "Stench Blossom" };
         string[] hunts_hw_srank = { "Kaiser Behemoth", "Senmurv", "The Pale Rider", "Gandarewa", "Bird of Paradise", "Leucrotta" };
 
@@ -382,7 +382,10 @@ namespace TBscan
 
         private void OFormActMain_OnLogLineRead(bool isImport, LogLineEventArgs logInfo)
         {
-            
+            if(isImport == true)
+            {
+                return;
+            }
 
             //Scan target
             if (scanning)
@@ -642,7 +645,7 @@ namespace TBscan
             }
 
             scanning = true;
-            button1.Text = "Scannig...";
+            button1.Text = "Scanning...";
             toolStripStatusLabel1.Text = "Scanning...";
             lblStatus.Text = "Plugin Enabled\nScanning for: " + textBox_targetName.Text.Clone();
         }
