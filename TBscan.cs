@@ -54,6 +54,7 @@ namespace TBscan
         private ToolStripStatusLabel toolStripStatusLabel1;
         private StatusStrip statusStrip1;
         private CheckBox checkBox_case_sensitive_search;
+        private CheckBox checkBox_only_search_for_npc;
 
         #region Designer Created Code (Avoid editing)
         /// <summary> 
@@ -103,6 +104,7 @@ namespace TBscan
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.checkBox_case_sensitive_search = new System.Windows.Forms.CheckBox();
+            this.checkBox_only_search_for_npc = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -125,7 +127,7 @@ namespace TBscan
             this.checkBox_audio_start.AutoSize = true;
             this.checkBox_audio_start.Checked = true;
             this.checkBox_audio_start.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_audio_start.Location = new System.Drawing.Point(6, 42);
+            this.checkBox_audio_start.Location = new System.Drawing.Point(6, 66);
             this.checkBox_audio_start.Name = "checkBox_audio_start";
             this.checkBox_audio_start.Size = new System.Drawing.Size(224, 17);
             this.checkBox_audio_start.TabIndex = 2;
@@ -138,7 +140,7 @@ namespace TBscan
             this.checkBox_audio_located.AutoSize = true;
             this.checkBox_audio_located.Checked = true;
             this.checkBox_audio_located.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_audio_located.Location = new System.Drawing.Point(6, 65);
+            this.checkBox_audio_located.Location = new System.Drawing.Point(6, 89);
             this.checkBox_audio_located.Name = "checkBox_audio_located";
             this.checkBox_audio_located.Size = new System.Drawing.Size(234, 17);
             this.checkBox_audio_located.TabIndex = 3;
@@ -181,6 +183,7 @@ namespace TBscan
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox_only_search_for_npc);
             this.groupBox2.Controls.Add(this.checkBox_case_sensitive_search);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
@@ -291,7 +294,7 @@ namespace TBscan
             this.checkBox_audio_cancelled.AutoSize = true;
             this.checkBox_audio_cancelled.Checked = true;
             this.checkBox_audio_cancelled.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_audio_cancelled.Location = new System.Drawing.Point(6, 88);
+            this.checkBox_audio_cancelled.Location = new System.Drawing.Point(6, 112);
             this.checkBox_audio_cancelled.Name = "checkBox_audio_cancelled";
             this.checkBox_audio_cancelled.Size = new System.Drawing.Size(246, 17);
             this.checkBox_audio_cancelled.TabIndex = 4;
@@ -319,10 +322,22 @@ namespace TBscan
             this.checkBox_case_sensitive_search.AutoSize = true;
             this.checkBox_case_sensitive_search.Location = new System.Drawing.Point(6, 19);
             this.checkBox_case_sensitive_search.Name = "checkBox_case_sensitive_search";
-            this.checkBox_case_sensitive_search.Size = new System.Drawing.Size(143, 17);
+            this.checkBox_case_sensitive_search.Size = new System.Drawing.Size(172, 17);
             this.checkBox_case_sensitive_search.TabIndex = 11;
-            this.checkBox_case_sensitive_search.Text = "Case sensitive searching";
+            this.checkBox_case_sensitive_search.Text = "Make searches case sensitive.";
             this.checkBox_case_sensitive_search.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_only_search_for_npc
+            // 
+            this.checkBox_only_search_for_npc.AutoSize = true;
+            this.checkBox_only_search_for_npc.Checked = true;
+            this.checkBox_only_search_for_npc.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_only_search_for_npc.Location = new System.Drawing.Point(6, 43);
+            this.checkBox_only_search_for_npc.Name = "checkBox_only_search_for_npc";
+            this.checkBox_only_search_for_npc.Size = new System.Drawing.Size(194, 17);
+            this.checkBox_only_search_for_npc.TabIndex = 12;
+            this.checkBox_only_search_for_npc.Text = "Only search for NPC (filters players).";
+            this.checkBox_only_search_for_npc.UseVisualStyleBackColor = true;
             // 
             // TBscanner
             // 
@@ -437,7 +452,7 @@ namespace TBscan
             {
                 for(int i = 0; i < hunts_arr_srank.Length; i++)
                 {
-                    match = new Regex("^.+03:Added new combatant " + hunts_arr_srank[i] + ".+").Match(logInfo.logLine);
+                    match = new Regex("^.+03:Added new combatant " + hunts_arr_srank[i] + ".+Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.srank);
@@ -451,7 +466,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_arr_arank.Length; i++)
                 {
-                    match = new Regex("^.+03:Added new combatant " + hunts_arr_arank[i] + ".+").Match(logInfo.logLine);
+                    match = new Regex("^.+03:Added new combatant " + hunts_arr_arank[i] + ".+Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.arank);
@@ -465,7 +480,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_arr_brank.Length; i++)
                 {
-                    match = new Regex("^.+03:Added new combatant " + hunts_arr_brank[i] + ".+").Match(logInfo.logLine);
+                    match = new Regex("^.+03:Added new combatant " + hunts_arr_brank[i] + ".+Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.brank);
@@ -481,7 +496,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_hw_srank.Length; i++)
                 {
-                    match = new Regex("^.+03:Added new combatant " + hunts_hw_srank[i] + ".+").Match(logInfo.logLine);
+                    match = new Regex("^.+03:Added new combatant " + hunts_hw_srank[i] + ".+Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.srank);
@@ -495,7 +510,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_hw_arank.Length; i++)
                 {
-                    match = new Regex("^.+03:Added new combatant " + hunts_hw_arank[i] + ".+").Match(logInfo.logLine);
+                    match = new Regex("^.+03:Added new combatant " + hunts_hw_arank[i] + ".+Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.arank);
@@ -509,7 +524,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_hw_brank.Length; i++)
                 {
-                    match = new Regex("^.+03:Added new combatant " + hunts_hw_brank[i] + ".+").Match(logInfo.logLine);
+                    match = new Regex("^.+03:Added new combatant " + hunts_hw_brank[i] + ".+Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         SoundPlayer snd = new SoundPlayer(Properties.Resources.brank);
@@ -537,6 +552,7 @@ namespace TBscan
             xmlSettings.AddControlSetting(textBox_targetName.Name, textBox_targetName);
 
             xmlSettings.AddControlSetting(checkBox_case_sensitive_search.Name, checkBox_case_sensitive_search);
+            xmlSettings.AddControlSetting(checkBox_only_search_for_npc.Name, checkBox_only_search_for_npc);
             xmlSettings.AddControlSetting(checkBox_audio_start.Name, checkBox_audio_start);
             xmlSettings.AddControlSetting(checkBox_audio_located.Name, checkBox_audio_located);
             xmlSettings.AddControlSetting(checkBox_audio_cancelled.Name, checkBox_audio_cancelled);
@@ -638,6 +654,9 @@ namespace TBscan
         {
             scanning = false;
             textBox_targetName.ReadOnly = false;
+            checkBox_only_search_for_npc.Enabled = true;
+            checkBox_case_sensitive_search.Enabled = true;
+
 
             button1.Text = "Scan";
             toolStripStatusLabel1.Text = "Not scanning";
@@ -647,13 +666,25 @@ namespace TBscan
         private void startScanning(string target)
         {
             String regexString;
+            String regexSuffix;
+
+            checkBox_only_search_for_npc.Enabled = false;
+            checkBox_case_sensitive_search.Enabled = false;
+
+            if (checkBox_only_search_for_npc.Checked)
+            {
+                regexSuffix = ".+Job: 0 Level: .+";
+            } else
+            {
+                regexSuffix = ".+";
+            }
             if (checkBox_case_sensitive_search.Checked)
             {
-                regexString = "^.+03:Added new combatant " + target + ".+";
+                regexString = "^.+03:Added new combatant " + target + regexSuffix;
             }
             else
             {
-                regexString = ("^.+03:Added new combatant " + target + ".+").ToLower();
+                regexString = ("^.+03:Added new combatant " + target + regexSuffix).ToLower();
             }
             scanner_regex = new Regex(regexString);
             textBox_targetName.ReadOnly = true;
