@@ -412,9 +412,9 @@ namespace TBscan
 
         private void textBox_targetName_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!scanning && e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                startScanning(textBox_targetName.Text.ToString());
+                button1_Click(null, null);
             }
         }
 
