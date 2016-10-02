@@ -134,4 +134,18 @@
   <ItemGroup>
     <None Include="Resources\targetUpdated.wav" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="audio\hunt_arr_a_rank.wav" />
+    <Content Include="audio\hunt_arr_b_rank.wav" />
+    <Content Include="audio\hunt_arr_s_rank.wav" />
+    <Content Include="audio\hunt_hw_a_rank.wav" />
+    <Content Include="audio\hunt_hw_b_rank.wav" />
+    <Content Include="audio\hunt_hw_s_rank.wav" />
+    <Content Include="audio\scan_cancel.wav" />
+    <Content Include="audio\scan_error.wav" />
+    <Content Include="audio\scan_found.wav" />
+    <Content Include="audio\scan_start.wav" />
+    <Content Include="audio\scan_updated.wav" />
+  </ItemGroup>
 </Project>
