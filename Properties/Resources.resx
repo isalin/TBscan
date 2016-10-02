@@ -130,10 +130,10 @@
   <data name="errorInvalidTarget" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\errorInvalidTarget.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="errorPleaseEnterTheNameOfAMob" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="temperrorPleaseEnterTheNameOfAMob" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\errorPleaseEnterTheNameOfAMob.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="found" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="found_npc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\found.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="scanning" type="System.Resources.ResXFileRef, System.Windows.Forms">

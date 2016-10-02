@@ -39,6 +39,7 @@ namespace TBscan
         bool scanning = false;
         private Regex scanner_regex;
         private Match match;
+        private Sound sound = new Sound();
 
         private GroupBox groupBox1;
         private GroupBox groupBox2;
@@ -492,8 +493,8 @@ namespace TBscan
                             if (checkBox_audio_located.Checked)
                             {
                                 updateInfoBox(logInfo.logLine);
-                                SoundPlayer snd = new SoundPlayer(Properties.Resources.found);
-                                snd.Play();
+                                sound.play("npc_found");
+
                             }
 #if DEBUG
                             MessageBox.Show("Line: " + logInfo.logLine);
@@ -731,7 +732,10 @@ namespace TBscan
             {
                 if (textBox_targetName.Text.ToString().Equals(""))
                 {
-                    SoundPlayer snd = new SoundPlayer(Properties.Resources.errorPleaseEnterTheNameOfAMob);
+                    new Sound();
+                    return;
+                    string assemblyFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+                    SoundPlayer snd = new SoundPlayer(Path.Combine(assemblyFolder, "test.wav"));
                     snd.Play();
                     return;
                 }

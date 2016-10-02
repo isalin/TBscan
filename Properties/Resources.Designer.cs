@@ -99,18 +99,9 @@ namespace TBscan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream errorPleaseEnterTheNameOfAMob {
+        internal static System.IO.UnmanagedMemoryStream found_npc {
             get {
-                return ResourceManager.GetStream("errorPleaseEnterTheNameOfAMob", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream found {
-            get {
-                return ResourceManager.GetStream("found", resourceCulture);
+                return ResourceManager.GetStream("found_npc", resourceCulture);
             }
         }
         
@@ -156,6 +147,15 @@ namespace TBscan.Properties {
         internal static System.IO.UnmanagedMemoryStream targetUpdated {
             get {
                 return ResourceManager.GetStream("targetUpdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream temperrorPleaseEnterTheNameOfAMob {
+            get {
+                return ResourceManager.GetStream("temperrorPleaseEnterTheNameOfAMob", resourceCulture);
             }
         }
     }

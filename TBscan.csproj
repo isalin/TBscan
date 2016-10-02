@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Sound.cs" />
     <Compile Include="TBscan.cs">
       <SubType>UserControl</SubType>
     </Compile>
