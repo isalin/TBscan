@@ -35,6 +35,11 @@ namespace TBscan
         string[] hunts_hw_arank = { "Mirka", "Lyuba", "Pylraster", "Lord of the Wyverns", "Slipkinx Steeljoints", "Stolas", "Bune", "Agathos", "Enkelados", "Sisiutl", "Campacti", "Stench Blossom" };
         string[] hunts_hw_srank = { "Kaiser Behemoth", "Senmurv", "The Pale Rider", "Gandarewa", "Bird of Paradise", "Leucrotta" };
 
+        //SB hunt marks
+        string[] hunts_sb_brank = { "Gwas-y-neidr", "Buccaboo", "Shadow-dweller Yamini", "Ouzelum", "Gauki Strongblade", "Guhuo Niao", "Deidar", "Gyorai Quickstrike", "Kurma", "Aswang", "Manes", "Kiwa" };
+        string[] hunts_sb_arank = { "Vochstein", "Aqrabuamelu", "Orcus", "Erle", "Funa Yurei", "Oni Yumemi", "Gajasura", "Angada", "Girimekhala", "Sum", "Mahisha", "Luminare" };
+        string[] hunts_sb_srank = { "Okina", "Gamma", "Orghana", "Salt and Light" };
+
         private Object scannerLock = new Object();
         bool scanning = false;
         private Regex scanner_regex;
@@ -200,7 +205,7 @@ namespace TBscan
             this.groupBox2.Controls.Add(this.checkBox_audio_start);
             this.groupBox2.Location = new System.Drawing.Point(3, 65);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(512, 232);
+            this.groupBox2.Size = new System.Drawing.Size(512, 365);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings";
@@ -245,7 +250,7 @@ namespace TBscan
             this.groupBox4.Controls.Add(this.checkBox_ARR_audio_Brank);
             this.groupBox4.Controls.Add(this.checkBox_ARR_audio_Arank);
             this.groupBox4.Controls.Add(this.checkBox_ARR_audio_Srank);
-            this.groupBox4.Location = new System.Drawing.Point(306, 118);
+            this.groupBox4.Location = new System.Drawing.Point(306, 245);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 100);
             this.groupBox4.TabIndex = 10;
@@ -291,9 +296,9 @@ namespace TBscan
             this.groupBox3.Controls.Add(this.checkBox_HW_audio_Arank);
             this.groupBox3.Controls.Add(this.checkBox_HW_audio_Srank);
             this.groupBox3.Controls.Add(this.checkBox_HW_audio_Brank);
-            this.groupBox3.Location = new System.Drawing.Point(306, 19);
+            this.groupBox3.Location = new System.Drawing.Point(306, 124);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 93);
+            this.groupBox3.Size = new System.Drawing.Size(200, 100);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Heavensward";
@@ -363,7 +368,7 @@ namespace TBscan
             // groupBox_details
             // 
             this.groupBox_details.Controls.Add(this.textBox_details);
-            this.groupBox_details.Location = new System.Drawing.Point(3, 304);
+            this.groupBox_details.Location = new System.Drawing.Point(3, 491);
             this.groupBox_details.Name = "groupBox_details";
             this.groupBox_details.Size = new System.Drawing.Size(512, 89);
             this.groupBox_details.TabIndex = 9;
@@ -587,6 +592,54 @@ namespace TBscan
                 for (int i = 0; i < hunts_hw_brank.Length; i++)
                 {
                     match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_hw_brank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    if (match.Success)
+                    {
+                        updateInfoBox(logInfo.logLine);
+                        SoundPlayer snd = new SoundPlayer(Properties.Resources.brank);
+                        snd.Play();
+                        return;
+                    }
+                }
+            }
+
+
+
+            //SB hunts
+            if (checkBox_SB_audio_Srank.Checked)
+            {
+                for (int i = 0; i < hunts_hw_srank.Length; i++)
+                {
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_srank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    if (match.Success)
+                    {
+                        updateInfoBox(logInfo.logLine);
+                        SoundPlayer snd = new SoundPlayer(Properties.Resources.srank);
+                        snd.Play();
+                        return;
+                    }
+                }
+            }
+
+            if (checkBox_SB_audio_Arank.Checked)
+            {
+                for (int i = 0; i < hunts_hw_arank.Length; i++)
+                {
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_arank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    if (match.Success)
+                    {
+                        updateInfoBox(logInfo.logLine);
+                        SoundPlayer snd = new SoundPlayer(Properties.Resources.arank);
+                        snd.Play();
+                        return;
+                    }
+                }
+            }
+
+            if (checkBox_SB_audio_Brank.Checked)
+            {
+                for (int i = 0; i < hunts_hw_brank.Length; i++)
+                {
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_brank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
