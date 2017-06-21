@@ -28,15 +28,15 @@ namespace TBscan
         //ARR hunt marks
         string[] hunts_arr_srank = { "Agrippa The Mighty", "Bonnacon", "Brontes", "Croakadile", "Croque-Mitaine", "Garlok", "Laideronnette", "Lampalagua", "Mahisha", "Mindflayer", "Minhocao", "Nandi", "Nunyunuwi", "Safat", "Thousand-cast Theda", "Wulgaru", "Zona Seeker" };
         string[] hunts_arr_arank = { "Alectryon", "Cornu", "Dalvag's Final Flame", "Forneus", "Ghede Ti Malice", "Girtab", "Hellsclaw", "Kurrea", "Maahes", "Marberry", "Marraco", "Melt", "Nahn", "Unktehi", "Vogaal Ja", "Sabotender Bailarina", "Zanig'oh" };
-        string[] hunts_arr_brank = { "Albin the Ashen", "Barbastelle", "Bloody Mary", "Dark Helmet", "Flame Sergeant Dalvag", "Gatling", "Leech King", "Monarch Ogrefly", "Myradrosh", "Naul", "Ovjang", "Phecda", "Sewer Syrup", "Skogs Fru", "Stinging Sophie", "Vuokho", "White Joker" };
+        string[] hunts_arr_brank = { "Albin the Ashen", "Albin The Ashen", "Barbastelle", "Bloody Mary", "Dark Helmet", "Flame Sergeant Dalvag", "Gatling", "Leech King", "Monarch Ogrefly", "Myradrosh", "Naul", "Ovjang", "Phecda", "Sewer Syrup", "Skogs Fru", "Stinging Sophie", "Vuokho", "White Joker" };
 
         //HW hunt marks
         string[] hunts_hw_brank = { "Alteci", "Kreutzet", "Gnath Cometdrone", "Thextera", "Pterygotus", "Gigantopithecus", "Scitalis", "The Scarecrow", "Squonk", "Sanu Vali Of Dancing Wings", "Lycidas", "Omni" };
-        string[] hunts_hw_arank = { "Mirka", "Lyuba", "Pylraster", "Lord of the Wyverns", "Slipkinx Steeljoints", "Stolas", "Bune", "Agathos", "Enkelados", "Sisiutl", "Campacti", "Stench Blossom" };
+        string[] hunts_hw_arank = { "Mirka", "Lyuba", "Pylraster", "Lord of the Wyverns", "Lord Of The Wyverns", "Slipkinx Steeljoints", "Stolas", "Bune", "Agathos", "Enkelados", "Sisiutl", "Campacti", "Stench Blossom" };
         string[] hunts_hw_srank = { "Kaiser Behemoth", "Senmurv", "The Pale Rider", "Gandarewa", "Bird of Paradise", "Leucrotta" };
 
         //SB hunt marks
-        string[] hunts_sb_brank = { "Gwas-y-neidr", "Buccaboo", "Shadow-dweller Yamini", "Ouzelum", "Gauki Strongblade", "Guhuo Niao", "Deidar", "Gyorai Quickstrike", "Kurma", "Aswang", "Manes", "Kiwa" };
+        string[] hunts_sb_brank = { "Gwas-y-neidr", "Gwas-y-Neidr", "Gwas-Y-Neidr", "Buccaboo", "Shadow-dweller Yamini", "Shadow-Dweller Yamini", "Ouzelum", "Gauki Strongblade", "Guhuo Niao", "Deidar", "Gyorai Quickstrike", "Kurma", "Aswang", "Manes", "Kiwa" };
         string[] hunts_sb_arank = { "Vochstein", "Aqrabuamelu", "Orcus", "Erle", "Funa Yurei", "Oni Yumemi", "Gajasura", "Angada", "Girimekhala", "Sum", "Mahisha", "Luminare" };
         string[] hunts_sb_srank = { "Okina", "Gamma", "Orghana", "Salt and Light" };
 
