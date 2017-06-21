@@ -63,6 +63,10 @@ namespace TBscan
         private GroupBox groupBox_details;
         private RichTextBox textBox_details;
         private CheckBox checkBox_display_infoBox;
+        private GroupBox groupBox5;
+        private CheckBox checkBox_SB_audio_Brank;
+        private CheckBox checkBox_SB_audio_Arank;
+        private CheckBox checkBox_SB_audio_Srank;
 
         #region Designer Created Code (Avoid editing)
         /// <summary> 
@@ -116,12 +120,17 @@ namespace TBscan
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.groupBox_details = new System.Windows.Forms.GroupBox();
             this.textBox_details = new System.Windows.Forms.RichTextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkBox_SB_audio_Srank = new System.Windows.Forms.CheckBox();
+            this.checkBox_SB_audio_Arank = new System.Windows.Forms.CheckBox();
+            this.checkBox_SB_audio_Brank = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox_details.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_targetName
@@ -195,6 +204,7 @@ namespace TBscan
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Controls.Add(this.checkBox_display_infoBox);
             this.groupBox2.Controls.Add(this.checkBox_only_search_for_npc);
             this.groupBox2.Controls.Add(this.checkBox_case_sensitive_search);
@@ -205,7 +215,7 @@ namespace TBscan
             this.groupBox2.Controls.Add(this.checkBox_audio_start);
             this.groupBox2.Location = new System.Drawing.Point(3, 65);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(512, 365);
+            this.groupBox2.Size = new System.Drawing.Size(512, 332);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Settings";
@@ -215,7 +225,7 @@ namespace TBscan
             this.checkBox_display_infoBox.AutoSize = true;
             this.checkBox_display_infoBox.Checked = true;
             this.checkBox_display_infoBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_display_infoBox.Location = new System.Drawing.Point(7, 209);
+            this.checkBox_display_infoBox.Location = new System.Drawing.Point(6, 309);
             this.checkBox_display_infoBox.Name = "checkBox_display_infoBox";
             this.checkBox_display_infoBox.Size = new System.Drawing.Size(185, 17);
             this.checkBox_display_infoBox.TabIndex = 13;
@@ -250,7 +260,7 @@ namespace TBscan
             this.groupBox4.Controls.Add(this.checkBox_ARR_audio_Brank);
             this.groupBox4.Controls.Add(this.checkBox_ARR_audio_Arank);
             this.groupBox4.Controls.Add(this.checkBox_ARR_audio_Srank);
-            this.groupBox4.Location = new System.Drawing.Point(306, 245);
+            this.groupBox4.Location = new System.Drawing.Point(306, 222);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 100);
             this.groupBox4.TabIndex = 10;
@@ -296,7 +306,7 @@ namespace TBscan
             this.groupBox3.Controls.Add(this.checkBox_HW_audio_Arank);
             this.groupBox3.Controls.Add(this.checkBox_HW_audio_Srank);
             this.groupBox3.Controls.Add(this.checkBox_HW_audio_Brank);
-            this.groupBox3.Location = new System.Drawing.Point(306, 124);
+            this.groupBox3.Location = new System.Drawing.Point(306, 116);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 100);
             this.groupBox3.TabIndex = 8;
@@ -368,7 +378,7 @@ namespace TBscan
             // groupBox_details
             // 
             this.groupBox_details.Controls.Add(this.textBox_details);
-            this.groupBox_details.Location = new System.Drawing.Point(3, 491);
+            this.groupBox_details.Location = new System.Drawing.Point(3, 403);
             this.groupBox_details.Name = "groupBox_details";
             this.groupBox_details.Size = new System.Drawing.Size(512, 89);
             this.groupBox_details.TabIndex = 9;
@@ -387,6 +397,52 @@ namespace TBscan
             this.textBox_details.Size = new System.Drawing.Size(506, 70);
             this.textBox_details.TabIndex = 0;
             this.textBox_details.Text = "";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.checkBox_SB_audio_Brank);
+            this.groupBox5.Controls.Add(this.checkBox_SB_audio_Arank);
+            this.groupBox5.Controls.Add(this.checkBox_SB_audio_Srank);
+            this.groupBox5.Location = new System.Drawing.Point(306, 10);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(200, 100);
+            this.groupBox5.TabIndex = 14;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Stormblood";
+            // 
+            // checkBox_SB_audio_Srank
+            // 
+            this.checkBox_SB_audio_Srank.AutoSize = true;
+            this.checkBox_SB_audio_Srank.Checked = true;
+            this.checkBox_SB_audio_Srank.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_SB_audio_Srank.Location = new System.Drawing.Point(7, 20);
+            this.checkBox_SB_audio_Srank.Name = "checkBox_SB_audio_Srank";
+            this.checkBox_SB_audio_Srank.Size = new System.Drawing.Size(164, 17);
+            this.checkBox_SB_audio_Srank.TabIndex = 0;
+            this.checkBox_SB_audio_Srank.Text = "Notify when S-rank is nearby.";
+            this.checkBox_SB_audio_Srank.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_SB_audio_Arank
+            // 
+            this.checkBox_SB_audio_Arank.AutoSize = true;
+            this.checkBox_SB_audio_Arank.Checked = true;
+            this.checkBox_SB_audio_Arank.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_SB_audio_Arank.Location = new System.Drawing.Point(7, 43);
+            this.checkBox_SB_audio_Arank.Name = "checkBox_SB_audio_Arank";
+            this.checkBox_SB_audio_Arank.Size = new System.Drawing.Size(164, 17);
+            this.checkBox_SB_audio_Arank.TabIndex = 1;
+            this.checkBox_SB_audio_Arank.Text = "Notify when A-rank is nearby.";
+            this.checkBox_SB_audio_Arank.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_SB_audio_Brank
+            // 
+            this.checkBox_SB_audio_Brank.AutoSize = true;
+            this.checkBox_SB_audio_Brank.Location = new System.Drawing.Point(7, 66);
+            this.checkBox_SB_audio_Brank.Name = "checkBox_SB_audio_Brank";
+            this.checkBox_SB_audio_Brank.Size = new System.Drawing.Size(164, 17);
+            this.checkBox_SB_audio_Brank.TabIndex = 2;
+            this.checkBox_SB_audio_Brank.Text = "Notify when B-rank is nearby.";
+            this.checkBox_SB_audio_Brank.UseVisualStyleBackColor = true;
             // 
             // TBscanner
             // 
@@ -410,6 +466,8 @@ namespace TBscan
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox_details.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
