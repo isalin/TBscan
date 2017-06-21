@@ -13,9 +13,9 @@ using System.Text.RegularExpressions;
 using System.Media;
 
 [assembly: AssemblyTitle("TBscanner")]
-[assembly: AssemblyVersion("1.0.0.3")]
+[assembly: AssemblyVersion("1.2.0.0")]
 [assembly: AssemblyCompany("TiaBot")]
-[assembly: AssemblyCopyright("Copyright (c) 2015, Tialyth")]
+[assembly: AssemblyCopyright("Copyright (c) 2017, Tialyth")]
 [assembly: AssemblyDescription("A plugin that lets you scan for nearby NPC.")]
 
 
@@ -771,6 +771,10 @@ namespace TBscan
             xmlSettings.AddControlSetting(checkBox_HW_audio_Brank.Name, checkBox_HW_audio_Brank);
             xmlSettings.AddControlSetting(checkBox_HW_audio_Arank.Name, checkBox_HW_audio_Arank);
             xmlSettings.AddControlSetting(checkBox_HW_audio_Srank.Name, checkBox_HW_audio_Srank);
+
+            xmlSettings.AddControlSetting(checkBox_SB_audio_Brank.Name, checkBox_SB_audio_Brank);
+            xmlSettings.AddControlSetting(checkBox_SB_audio_Arank.Name, checkBox_SB_audio_Arank);
+            xmlSettings.AddControlSetting(checkBox_SB_audio_Srank.Name, checkBox_SB_audio_Srank);
 
 
             if (File.Exists(settingsFile))
