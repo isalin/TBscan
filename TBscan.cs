@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 using System.Media;
 
 [assembly: AssemblyTitle("TBscanner")]
-[assembly: AssemblyVersion("1.2.0.0")]
+[assembly: AssemblyVersion("1.2.0.2")]
 [assembly: AssemblyCompany("TiaBot")]
 [assembly: AssemblyCopyright("Copyright (c) 2017, Tialyth")]
 [assembly: AssemblyDescription("A plugin that lets you scan for nearby NPC.")]
@@ -31,7 +31,7 @@ namespace TBscan
         string[] hunts_arr_brank = { "Albin the Ashen", "Albin The Ashen", "Barbastelle", "Bloody Mary", "Dark Helmet", "Flame Sergeant Dalvag", "Gatling", "Leech King", "Monarch Ogrefly", "Myradrosh", "Naul", "Ovjang", "Phecda", "Sewer Syrup", "Skogs Fru", "Stinging Sophie", "Vuokho", "White Joker" };
 
         //HW hunt marks
-        string[] hunts_hw_brank = { "Alteci", "Kreutzet", "Gnath Cometdrone", "Thextera", "Pterygotus", "Gigantopithecus", "Scitalis", "The Scarecrow", "Squonk", "Sanu Vali Of Dancing Wings", "Lycidas", "Omni" };
+        string[] hunts_hw_brank = { "Alteci", "Kreutzet", "Gnath Cometdrone", "Thextera", "Pterygotus", "False Gigantopithecus", "Scitalis", "The Scarecrow", "Squonk", "Sanu Vali Of Dancing Wings", "Lycidas", "Omni" };
         string[] hunts_hw_arank = { "Mirka", "Lyuba", "Pylraster", "Lord of the Wyverns", "Lord Of The Wyverns", "Slipkinx Steeljoints", "Stolas", "Bune", "Agathos", "Enkelados", "Sisiutl", "Campacti", "Stench Blossom" };
         string[] hunts_hw_srank = { "Kaiser Behemoth", "Senmurv", "The Pale Rider", "Gandarewa", "Bird of Paradise", "Leucrotta" };
 
@@ -272,9 +272,9 @@ namespace TBscan
             this.checkBox_ARR_audio_Brank.AutoSize = true;
             this.checkBox_ARR_audio_Brank.Location = new System.Drawing.Point(6, 68);
             this.checkBox_ARR_audio_Brank.Name = "checkBox_ARR_audio_Brank";
-            this.checkBox_ARR_audio_Brank.Size = new System.Drawing.Size(166, 17);
+            this.checkBox_ARR_audio_Brank.Size = new System.Drawing.Size(169, 17);
             this.checkBox_ARR_audio_Brank.TabIndex = 2;
-            this.checkBox_ARR_audio_Brank.Text = "Notify when B-Rank is nearby";
+            this.checkBox_ARR_audio_Brank.Text = "Notify when B-Rank is nearby.";
             this.checkBox_ARR_audio_Brank.UseVisualStyleBackColor = true;
             // 
             // checkBox_ARR_audio_Arank
@@ -284,9 +284,9 @@ namespace TBscan
             this.checkBox_ARR_audio_Arank.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_ARR_audio_Arank.Location = new System.Drawing.Point(6, 44);
             this.checkBox_ARR_audio_Arank.Name = "checkBox_ARR_audio_Arank";
-            this.checkBox_ARR_audio_Arank.Size = new System.Drawing.Size(166, 17);
+            this.checkBox_ARR_audio_Arank.Size = new System.Drawing.Size(169, 17);
             this.checkBox_ARR_audio_Arank.TabIndex = 1;
-            this.checkBox_ARR_audio_Arank.Text = "Notify when A-Rank is nearby";
+            this.checkBox_ARR_audio_Arank.Text = "Notify when A-Rank is nearby.";
             this.checkBox_ARR_audio_Arank.UseVisualStyleBackColor = true;
             // 
             // checkBox_ARR_audio_Srank
@@ -296,9 +296,9 @@ namespace TBscan
             this.checkBox_ARR_audio_Srank.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_ARR_audio_Srank.Location = new System.Drawing.Point(6, 20);
             this.checkBox_ARR_audio_Srank.Name = "checkBox_ARR_audio_Srank";
-            this.checkBox_ARR_audio_Srank.Size = new System.Drawing.Size(166, 17);
+            this.checkBox_ARR_audio_Srank.Size = new System.Drawing.Size(169, 17);
             this.checkBox_ARR_audio_Srank.TabIndex = 0;
-            this.checkBox_ARR_audio_Srank.Text = "Notify when S-Rank is nearby";
+            this.checkBox_ARR_audio_Srank.Text = "Notify when S-Rank is nearby.";
             this.checkBox_ARR_audio_Srank.UseVisualStyleBackColor = true;
             // 
             // groupBox3
@@ -320,9 +320,9 @@ namespace TBscan
             this.checkBox_HW_audio_Arank.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_HW_audio_Arank.Location = new System.Drawing.Point(6, 42);
             this.checkBox_HW_audio_Arank.Name = "checkBox_HW_audio_Arank";
-            this.checkBox_HW_audio_Arank.Size = new System.Drawing.Size(161, 17);
+            this.checkBox_HW_audio_Arank.Size = new System.Drawing.Size(164, 17);
             this.checkBox_HW_audio_Arank.TabIndex = 6;
-            this.checkBox_HW_audio_Arank.Text = "Notify when A-rank is nearby";
+            this.checkBox_HW_audio_Arank.Text = "Notify when A-rank is nearby.";
             this.checkBox_HW_audio_Arank.UseVisualStyleBackColor = true;
             // 
             // checkBox_HW_audio_Srank
@@ -332,9 +332,9 @@ namespace TBscan
             this.checkBox_HW_audio_Srank.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_HW_audio_Srank.Location = new System.Drawing.Point(6, 19);
             this.checkBox_HW_audio_Srank.Name = "checkBox_HW_audio_Srank";
-            this.checkBox_HW_audio_Srank.Size = new System.Drawing.Size(161, 17);
+            this.checkBox_HW_audio_Srank.Size = new System.Drawing.Size(164, 17);
             this.checkBox_HW_audio_Srank.TabIndex = 7;
-            this.checkBox_HW_audio_Srank.Text = "Notify when S-rank is nearby";
+            this.checkBox_HW_audio_Srank.Text = "Notify when S-rank is nearby.";
             this.checkBox_HW_audio_Srank.UseVisualStyleBackColor = true;
             // 
             // checkBox_HW_audio_Brank
@@ -342,9 +342,9 @@ namespace TBscan
             this.checkBox_HW_audio_Brank.AutoSize = true;
             this.checkBox_HW_audio_Brank.Location = new System.Drawing.Point(6, 65);
             this.checkBox_HW_audio_Brank.Name = "checkBox_HW_audio_Brank";
-            this.checkBox_HW_audio_Brank.Size = new System.Drawing.Size(161, 17);
+            this.checkBox_HW_audio_Brank.Size = new System.Drawing.Size(164, 17);
             this.checkBox_HW_audio_Brank.TabIndex = 5;
-            this.checkBox_HW_audio_Brank.Text = "Notify when B-rank is nearby";
+            this.checkBox_HW_audio_Brank.Text = "Notify when B-rank is nearby.";
             this.checkBox_HW_audio_Brank.UseVisualStyleBackColor = true;
             // 
             // checkBox_audio_cancelled
@@ -559,7 +559,7 @@ namespace TBscan
                                 snd.Play();
                             }
 #if DEBUG
-                            MessageBox.Show("Line: " + logInfo.logLine);
+                            //MessageBox.Show("Line: " + logInfo.logLine);
 #endif
                         }
                     }
@@ -665,7 +665,7 @@ namespace TBscan
             //SB hunts
             if (checkBox_SB_audio_Srank.Checked)
             {
-                for (int i = 0; i < hunts_hw_srank.Length; i++)
+                for (int i = 0; i < hunts_sb_srank.Length; i++)
                 {
                     match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_srank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
@@ -680,7 +680,7 @@ namespace TBscan
 
             if (checkBox_SB_audio_Arank.Checked)
             {
-                for (int i = 0; i < hunts_hw_arank.Length; i++)
+                for (int i = 0; i < hunts_sb_arank.Length; i++)
                 {
                     match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_arank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
@@ -695,7 +695,7 @@ namespace TBscan
 
             if (checkBox_SB_audio_Brank.Checked)
             {
-                for (int i = 0; i < hunts_hw_brank.Length; i++)
+                for (int i = 0; i < hunts_sb_brank.Length; i++)
                 {
                     match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_brank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
                     if (match.Success)
