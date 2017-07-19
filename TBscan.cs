@@ -13,7 +13,7 @@ using System.Text.RegularExpressions;
 using System.Media;
 
 [assembly: AssemblyTitle("TBscanner")]
-[assembly: AssemblyVersion("1.2.0.2")]
+[assembly: AssemblyVersion("1.2.0.4")]
 [assembly: AssemblyCompany("TiaBot")]
 [assembly: AssemblyCopyright("Copyright (c) 2017, Tialyth")]
 [assembly: AssemblyDescription("A plugin that lets you scan for nearby NPC.")]
@@ -572,7 +572,7 @@ namespace TBscan
             {
                 for(int i = 0; i < hunts_arr_srank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_arr_srank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_arr_srank[i] + "\\.  Job: 0 Level: 50.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -587,7 +587,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_arr_arank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_arr_arank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_arr_arank[i] + "\\.  Job: 0 Level: 50.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -602,7 +602,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_arr_brank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_arr_brank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_arr_brank[i] + "\\.  Job: 0 Level: 50.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -619,7 +619,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_hw_srank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_hw_srank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_hw_srank[i] + "\\.  Job: 0 Level: 60.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -634,7 +634,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_hw_arank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_hw_arank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_hw_arank[i] + "\\.  Job: 0 Level: 60.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -649,7 +649,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_hw_brank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_hw_brank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_hw_brank[i] + "\\.  Job: 0 Level: 60.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -667,7 +667,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_sb_srank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_srank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_srank[i] + "\\.  Job: 0 Level: 70.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -682,7 +682,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_sb_arank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_arank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_arank[i] + "\\.  Job: 0 Level: 70.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -697,7 +697,7 @@ namespace TBscan
             {
                 for (int i = 0; i < hunts_sb_brank.Length; i++)
                 {
-                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_brank[i] + "\\.  Job: 0 Level:.+").Match(logInfo.logLine);
+                    match = new Regex(@"\[.+\] 03:Added new combatant " + hunts_sb_brank[i] + "\\.  Job: 0 Level: 70.+").Match(logInfo.logLine);
                     if (match.Success)
                     {
                         updateInfoBox(logInfo.logLine);
@@ -734,6 +734,7 @@ namespace TBscan
 
                     //Update the details textbox
                     textBox_details.Text = details;
+
                 }
 
                 
