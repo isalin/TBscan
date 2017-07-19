@@ -38,7 +38,7 @@ namespace TBscan
         //SB hunt marks
         string[] hunts_sb_brank = { "Gwas-y-neidr", "Gwas-y-Neidr", "Gwas-Y-Neidr", "Buccaboo", "Shadow-dweller Yamini", "Shadow-Dweller Yamini", "Ouzelum", "Gauki Strongblade", "Guhuo Niao", "Deidar", "Gyorai Quickstrike", "Kurma", "Aswang", "Manes", "Kiwa" };
         string[] hunts_sb_arank = { "Vochstein", "Aqrabuamelu", "Orcus", "Erle", "Funa Yurei", "Oni Yumemi", "Gajasura", "Angada", "Girimekhala", "Sum", "Mahisha", "Luminare" };
-        string[] hunts_sb_srank = { "Okina", "Gamma", "Orghana", "Salt and Light" };
+        string[] hunts_sb_srank = { "Okina", "Gamma", "Orghana", "Salt and Light", "Udumbara", "Bone Crawler" };
 
         private Object scannerLock = new Object();
         bool scanning = false;
